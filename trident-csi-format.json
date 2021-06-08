@@ -1,0 +1,30 @@
+{
+	"$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "trident_csi_log" : {
+        "title" : "Trident CSI Sidecar Log",
+        "description" : "Log format used by trident CSI sidecars",
+        "regex" : {
+            "std" : {
+                "pattern" : "^(?<level>\\S)(?<timestamp>\\d{4} \\d{2}:\\d{2}:\\d{2}\\.\\d{6})\\s+\\d+ (?<body>(?:.|\\n)*)$"
+            }
+        },
+        "timestamp-format": [
+        	"%m%d %H:%M:%S.%f"
+        	],
+        "level" : {
+        	"fatal" : "F",
+        	"critical" : "C",
+            "error" : "E",
+            "warning" : "W",
+            "stats" : "S",
+            "info" : "I",
+            "debug" : "D",
+            "trace" : "T"
+        },
+        "sample" : [
+            {
+                "line" : "I0607 23:46:31.322658       1 snapshot_controller_base.go:174] syncContentByKey[snapcontent-9fc76eda-3793-44cf-98f3-9415110a2ea6]"
+            }
+        ]
+    }
+}

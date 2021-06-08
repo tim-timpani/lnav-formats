@@ -1,0 +1,20 @@
+{
+	"$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "trident_log" : {
+        "title" : "Trident Log",
+        "description" : "Log format used by trident controller and node",
+        "regex" : {
+            "std" : {
+                "pattern" : "^time=\"\\d{4}-(?<timestamp>\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})Z\" level=(?<level>\\S+) msg=(?<body>(?:.|\\n)*)$"
+            }
+        },
+        "timestamp-format": [
+        	"%m-%dT%H:%M:%S"
+        	],
+        "sample" : [
+            {
+                "line" : "time=\"2021-03-26T20:05:28Z\" level=debug msg=Environment TRIDENT_CSI_PORT_34571_TCP_PROTO=tcp"
+            }
+        ]
+    }
+}
